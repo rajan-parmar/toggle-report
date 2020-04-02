@@ -19,7 +19,6 @@ Route::get('/', function () {
 
     $toggl = resolve(Toggl::class);
     $workspaceId = $toggl->getUserWorkspaceId();
-    $this->projects = $toggl->getProjectsOf($workspaceId);
 
     foreach ($projectsArray as $project) {
         $projectDetails = [

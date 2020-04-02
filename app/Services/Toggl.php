@@ -27,28 +27,6 @@ class Toggl
     }
 
     /**
-     * Fetch and returns the list of all projects
-     *
-     * @param int $workspaceId
-     * @return stdClass
-     **/
-    public function getProjectsOf($workspaceId)
-    {
-        return $this->toggl->getWorkspaceProjects($workspaceId);
-    }
-
-    /**
-     * Creates a new time entry in toggl
-     *
-     * @param array $timeEntryDetails
-     * @return stdClass
-     **/
-    public function addNewTimeEntry($timeEntryDetails)
-    {
-        return $this->toggl->createTimeEntry($timeEntryDetails);
-    }
-
-    /**
      * Creates a new project in toggl
      *
      * @param array $projectDetails

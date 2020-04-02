@@ -36,4 +36,15 @@ class Toggl
     {
         return $this->toggl->createProject($projectDetails);
     }
+
+    /**
+     * Creates a new time entry in toggl
+     *
+     * @param array $timeEntryDetails
+     * @return stdClass
+     **/
+    public function addNewTimeEntry($timeEntryDetails)
+    {
+        return $this->toggl->createTimeEntry($timeEntryDetails);
+    }
 }

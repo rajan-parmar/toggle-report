@@ -15,17 +15,20 @@ use App\Services\Toggl;
 */
 
 Route::get('/', function () {
-    $projectsArray = ['testing1', 'testing2', 'testing3'];
-
     $toggl = resolve(Toggl::class);
     $workspaceId = $toggl->getUserWorkspaceId();
 
-    foreach ($projectsArray as $project) {
-        $projectDetails = [
-            'name' => $project,
-            'wid' => $workspaceId,
-        ];
-        $toggl->addNewProject($projectDetails);
-    }
+    $timeEntryDetails = [
+        'description' => 'my first laravel toggl task',
+        'wid' => $workspaceId,
+        'pid' => 159544590,
+        'start' => "2020-04-02T07:00:00.000Z",
+        'stop' => "2020-04-02T07:00:10.000Z",
+        'duration' => "10",
+        'created_with' => 'Laravel Toggl Api',
+    ];
+
+    $toggl->addNewTimeEntry($timeEntryDetails);
+
     return view('welcome');
 });
